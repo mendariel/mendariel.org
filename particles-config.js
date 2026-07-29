@@ -2,21 +2,18 @@ tsParticles.load("tsparticles", {
   fullScreen: { enable: false },
   background: { color: "transparent" },
   particles: {
-    number: { value: 35, density: { enable: true, area: 900 } },
-    color: { value: "#4f8cff" },
+    number: { value: 90, density: { enable: true, area: 900 } },
+    color: { value: "#ffffff" },
     shape: { type: "circle" },
-    opacity: { value: 0.25 },
-    size: { value: { min: 1, max: 2.5 } },
-    links: {
-      enable: true,
-      distance: 130,
-      color: "#4f8cff",
-      opacity: 0.12,
-      width: 1
+    opacity: {
+      value: 0.5,
+      animation: { enable: true, speed: 0.4, minimumValue: 0.05, sync: false }
     },
+    size: { value: { min: 0.5, max: 1.8 } },
+    links: { enable: false },
     move: {
       enable: true,
-      speed: 0.3,
+      speed: 0.08,
       direction: "none",
       random: true,
       straight: false,
