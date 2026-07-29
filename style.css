@@ -18,6 +18,19 @@ body {
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.5;
+  position: relative;
+}
+
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero, main, footer {
+  position: relative;
+  z-index: 1;
 }
 
 .hero {
@@ -25,6 +38,15 @@ body {
   margin: 0 auto;
   padding: 5rem 1.5rem 3rem;
   text-align: center;
+}
+
+.avatar {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  margin-bottom: 1.25rem;
 }
 
 .hero h1 {
@@ -35,18 +57,58 @@ body {
 .tagline {
   color: var(--muted);
   font-size: 1.1rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
 }
 
-.hero-links a {
-  color: var(--accent);
+.about {
+  color: var(--muted);
+  font-size: 0.98rem;
+  max-width: 560px;
+  margin: 0 auto 1.75rem;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
   text-decoration: none;
-  margin: 0 0.75rem;
   font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
-.hero-links a:hover {
-  text-decoration: underline;
+.btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  color: var(--muted);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.skill {
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
 }
 
 main {

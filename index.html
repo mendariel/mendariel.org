@@ -4,15 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ariel Menda</title>
+<meta name="description" content="Ariel Menda &mdash; developer tinkering with small tools, automation, and home server projects.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="tsparticles"></div>
+
   <header class="hero">
+    <img class="avatar" src="avatar.jfif" alt="Ariel Menda" width="104" height="104">
     <h1>Ariel Menda</h1>
     <p class="tagline">Developer tinkering with small tools, automation, and home server projects.</p>
+    <p class="about">
+      I like building small, useful things &mdash; from home automation and a self-hosted media/photo
+      stack to little utilities that scratch a specific itch. Most of what's here started as
+      "this should just work better" and turned into a weekend project.
+    </p>
     <div class="hero-links">
-      <a href="https://github.com/mendariel" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://status.mendariel.org" target="_blank" rel="noopener">Home Server Status</a>
+      <a class="btn" href="https://github.com/mendariel" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/ariel-menda-80980135/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="mailto:ariel.menda@gmail.com">Email</a>
+      <a class="btn" href="resume.doc">Resume</a>
+      <a class="btn btn-ghost" href="https://status.mendariel.org" target="_blank" rel="noopener">Home Server Status</a>
+    </div>
+    <div class="skills">
+      <span class="skill">Shell</span>
+      <span class="skill">PowerShell</span>
+      <span class="skill">C#</span>
+      <span class="skill">HTML</span>
+      <span class="skill">Docker</span>
+      <span class="skill">Home Automation</span>
     </div>
   </header>
 
@@ -58,6 +78,8 @@
     <p>&copy; <span id="year"></span> Ariel Menda &middot; <a href="https://github.com/mendariel" target="_blank" rel="noopener">github.com/mendariel</a></p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@3/tsparticles.slim.bundle.min.js"></script>
+  <script src="particles-config.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
