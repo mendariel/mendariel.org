@@ -8,10 +8,10 @@ tsParticles.load({
       color: { value: "#ffffff" },
       shape: { type: "circle" },
       opacity: {
-        value: 0.5,
-        animation: { enable: true, speed: 0.4, minimumValue: 0.05, sync: false }
+        value: 0.9,
+        animation: { enable: true, speed: 0.4, minimumValue: 0.3, sync: false }
       },
-      size: { value: { min: 0.5, max: 1.8 } },
+      size: { value: { min: 1.5, max: 3.5 } },
       links: { enable: false },
       move: {
         enable: true,
