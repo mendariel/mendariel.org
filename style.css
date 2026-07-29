@@ -117,12 +117,45 @@ main {
   padding: 0 1.5rem 4rem;
 }
 
-main h2 {
+.projects-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
+  background: none;
+  border: none;
+  padding: 0;
   margin-bottom: 1.25rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.projects-toggle:hover {
+  color: var(--text);
+}
+
+.projects-toggle .chevron {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.projects-toggle[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.projects-panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.projects-panel.open {
+  max-height: 1200px;
+  opacity: 1;
 }
 
 .grid {

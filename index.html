@@ -37,7 +37,10 @@
   </header>
 
   <main>
-    <h2>Projects</h2>
+    <button class="projects-toggle" id="projectsToggle" aria-expanded="false" aria-controls="projectsPanel">
+      Projects <span class="chevron">&#9662;</span>
+    </button>
+    <div class="projects-panel" id="projectsPanel">
     <div class="grid">
       <a class="card" href="https://github.com/mendariel/rpi_screen" target="_blank" rel="noopener">
         <h3>rpi_screen</h3>
@@ -72,6 +75,7 @@
         <span class="lang">C#</span>
       </a>
     </div>
+    </div>
   </main>
 
   <footer>
@@ -82,6 +86,13 @@
   <script src="particles-config.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const projectsToggle = document.getElementById('projectsToggle');
+    const projectsPanel = document.getElementById('projectsPanel');
+    projectsToggle.addEventListener('click', () => {
+      const isOpen = projectsPanel.classList.toggle('open');
+      projectsToggle.setAttribute('aria-expanded', isOpen);
+    });
   </script>
 </body>
 </html>
