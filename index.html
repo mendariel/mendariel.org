@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariel Menda</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Ariel Menda</h1>
+    <p class="tagline">Developer tinkering with small tools, automation, and home server projects.</p>
+    <div class="hero-links">
+      <a href="https://github.com/mendariel" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://status.mendariel.org" target="_blank" rel="noopener">Home Server Status</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Projects</h2>
+    <div class="grid">
+      <a class="card" href="https://github.com/mendariel/rpi_screen" target="_blank" rel="noopener">
+        <h3>rpi_screen</h3>
+        <p>Raspberry Pi screen project.</p>
+        <span class="lang">Shell</span>
+      </a>
+      <a class="card" href="https://github.com/mendariel/web_ufd_scanner" target="_blank" rel="noopener">
+        <h3>web_ufd_scanner</h3>
+        <p>Web-based USB flash drive scanner.</p>
+        <span class="lang">HTML</span>
+      </a>
+      <a class="card" href="https://github.com/mendariel/subscanner" target="_blank" rel="noopener">
+        <h3>subscanner</h3>
+        <p>Scans subtitles (EN and Heb) for selected folders.</p>
+      </a>
+      <a class="card" href="https://github.com/mendariel/phonebook" target="_blank" rel="noopener">
+        <h3>phonebook</h3>
+        <p>Phonebook application.</p>
+      </a>
+      <a class="card" href="https://github.com/mendariel/copy_with_validation" target="_blank" rel="noopener">
+        <h3>copy_with_validation</h3>
+        <p>File copy utility with validation.</p>
+      </a>
+      <a class="card" href="https://github.com/mendariel/MP3_organizer" target="_blank" rel="noopener">
+        <h3>MP3_organizer</h3>
+        <p>Organizes MP3 files by band name and album.</p>
+        <span class="lang">PowerShell</span>
+      </a>
+      <a class="card" href="https://github.com/mendariel/Calc" target="_blank" rel="noopener">
+        <h3>Calc</h3>
+        <p>Calculator with an age-calculator mode.</p>
+        <span class="lang">C#</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Ariel Menda &middot; <a href="https://github.com/mendariel" target="_blank" rel="noopener">github.com/mendariel</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
