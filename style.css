@@ -21,12 +21,48 @@ body {
   position: relative;
 }
 
+/* Slow-drifting aurora glow behind the starfield */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -25%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      38% 32% at 22% 28%,
+      rgba(79, 140, 255, 0.2),
+      transparent 70%
+    ),
+    radial-gradient(
+      34% 30% at 78% 68%,
+      rgba(146, 92, 255, 0.16),
+      transparent 70%
+    );
+  animation: aurora 30s ease-in-out infinite alternate;
+}
+
+@keyframes aurora {
+  from {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.18);
+  }
+}
+
 #stars {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
 }
 
 .hero, main, footer {

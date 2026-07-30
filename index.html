@@ -1,100 +1,176 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ariel Menda</title>
-<meta name="description" content="Ariel Menda &mdash; QA/IT professional with almost 20 years in Cellular and RF, tinkering with Raspberry Pi, PC builds, and home automation.">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <canvas id="stars"></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ariel Menda</title>
+    <meta
+      name="description"
+      content="Ariel Menda &mdash; QA/IT professional with almost 20 years in Cellular and RF, tinkering with Raspberry Pi, PC builds, and home automation."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="stars"></canvas>
 
-  <header class="hero">
-    <img class="avatar" src="avatar.jfif" alt="Ariel Menda" width="104" height="104">
-    <h1>Ariel Menda</h1>
-    <p class="tagline">QA &amp; IT professional &mdash; almost 20 years testing Cellular &amp; RF technology.</p>
-    <p class="about">
-      Born in 1978, married with three kids, living in Netanya, Israel. I'm QA/IT at heart rather
-      than a software developer &mdash; my day job is nearly two decades deep in Cellular and RF
-      testing. Outside of work I like tinkering: Raspberry Pi projects, building PCs, and running
-      a small home lab full of self-hosted services. The tools below are things I built on the side
-      because "this should just work better" turned into a weekend project.
-    </p>
-    <div class="hero-links">
-      <a class="btn" href="https://github.com/mendariel" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/ariel-menda-80980135/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="mailto:ariel.menda@gmail.com">Email</a>
-      <a class="btn" href="resume.doc">Resume</a>
-      <a class="btn btn-ghost" href="https://status.mendariel.org" target="_blank" rel="noopener">Home Server Status</a>
-    </div>
-    <div class="skills">
-      <span class="skill">QA</span>
-      <span class="skill">Cellular Testing</span>
-      <span class="skill">RF</span>
-      <span class="skill">Raspberry Pi</span>
-      <span class="skill">PC Building</span>
-      <span class="skill">Home Automation</span>
-      <span class="skill">Docker</span>
-    </div>
-  </header>
+    <header class="hero">
+      <img
+        class="avatar"
+        src="avatar.jfif"
+        alt="Ariel Menda"
+        width="104"
+        height="104"
+      />
+      <h1>Ariel Menda</h1>
+      <p class="tagline">
+        QA &amp; IT professional &mdash; almost 20 years Cellular testing &amp;
+        RF technology.
+      </p>
+      <p class="about">
+        Born in 1978, married with three kids, living in Netanya, Israel. I'm
+        QA/IT at heart rather than a software developer &mdash; my day job is
+        nearly two decades deep in Cellular and RF testing. Outside of work I
+        like tinkering: Raspberry Pi projects, building PCs, and running a small
+        home lab full of self-hosted services. The tools below are things I
+        built on the side because "this should just work better" turned into a
+        weekend project.
+      </p>
+      <div class="hero-links">
+        <a
+          class="btn"
+          href="https://github.com/mendariel"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+        <a
+          class="btn"
+          href="https://www.linkedin.com/in/ariel-menda-80980135/"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+        <a class="btn" href="mailto:ariel.menda@gmail.com">Email</a>
+        <a class="btn" href="resume.doc">Resume</a>
+        <a
+          class="btn btn-ghost"
+          href="https://status.mendariel.org"
+          target="_blank"
+          rel="noopener"
+          >Home Server Status</a
+        >
+      </div>
+      <div class="skills">
+        <span class="skill">QA</span>
+        <span class="skill">Cellular Testing</span>
+        <span class="skill">RF</span>
+        <span class="skill">Raspberry Pi</span>
+        <span class="skill">PC Building</span>
+        <span class="skill">Home Automation , Docker , NAS</span>
+      </div>
+    </header>
 
-  <main>
-    <button class="projects-toggle" id="projectsToggle" aria-expanded="false" aria-controls="projectsPanel">
-      Projects <span class="chevron">&#9662;</span>
-    </button>
-    <div class="projects-panel" id="projectsPanel">
-    <div class="grid">
-      <a class="card" href="https://github.com/mendariel/rpi_screen" target="_blank" rel="noopener">
-        <h3>rpi_screen</h3>
-        <p>Raspberry Pi screen project.</p>
-        <span class="lang">Shell</span>
-      </a>
-      <a class="card" href="https://github.com/mendariel/web_ufd_scanner" target="_blank" rel="noopener">
-        <h3>web_ufd_scanner</h3>
-        <p>Web-based USB flash drive scanner.</p>
-        <span class="lang">HTML</span>
-      </a>
-      <a class="card" href="https://github.com/mendariel/subscanner" target="_blank" rel="noopener">
-        <h3>subscanner</h3>
-        <p>Scans subtitles (EN and Heb) for selected folders.</p>
-      </a>
-      <a class="card" href="https://github.com/mendariel/phonebook" target="_blank" rel="noopener">
-        <h3>phonebook</h3>
-        <p>Phonebook application.</p>
-      </a>
-      <a class="card" href="https://github.com/mendariel/copy_with_validation" target="_blank" rel="noopener">
-        <h3>copy_with_validation</h3>
-        <p>File copy utility with validation.</p>
-      </a>
-      <a class="card" href="https://github.com/mendariel/MP3_organizer" target="_blank" rel="noopener">
-        <h3>MP3_organizer</h3>
-        <p>Organizes MP3 files by band name and album.</p>
-        <span class="lang">PowerShell</span>
-      </a>
-      <a class="card" href="https://github.com/mendariel/Calc" target="_blank" rel="noopener">
-        <h3>Calc</h3>
-        <p>Calculator with an age-calculator mode.</p>
-        <span class="lang">C#</span>
-      </a>
-    </div>
-    </div>
-  </main>
+    <main>
+      <button
+        class="projects-toggle"
+        id="projectsToggle"
+        aria-expanded="false"
+        aria-controls="projectsPanel"
+      >
+        Projects <span class="chevron">&#9662;</span>
+      </button>
+      <div class="projects-panel" id="projectsPanel">
+        <div class="grid">
+          <a
+            class="card"
+            href="https://github.com/mendariel/rpi_screen"
+            target="_blank"
+            rel="noopener"
+          >
+            <h3>rpi_screen</h3>
+            <p>Raspberry Pi screen project.</p>
+            <span class="lang">Shell</span>
+          </a>
+          <a
+            class="card"
+            href="https://github.com/mendariel/web_ufd_scanner"
+            target="_blank"
+            rel="noopener"
+          >
+            <h3>web_ufd_scanner</h3>
+            <p>Web-based USB flash drive scanner.</p>
+            <span class="lang">HTML</span>
+          </a>
+          <a
+            class="card"
+            href="https://github.com/mendariel/subscanner"
+            target="_blank"
+            rel="noopener"
+          >
+            <h3>subscanner</h3>
+            <p>Scans subtitles (EN and Heb) for selected folders.</p>
+          </a>
+          <a
+            class="card"
+            href="https://github.com/mendariel/phonebook"
+            target="_blank"
+            rel="noopener"
+          >
+            <h3>phonebook</h3>
+            <p>Phonebook application.</p>
+          </a>
+          <a
+            class="card"
+            href="https://github.com/mendariel/copy_with_validation"
+            target="_blank"
+            rel="noopener"
+          >
+            <h3>copy_with_validation</h3>
+            <p>File copy utility with validation.</p>
+          </a>
+          <a
+            class="card"
+            href="https://github.com/mendariel/MP3_organizer"
+            target="_blank"
+            rel="noopener"
+          >
+            <h3>MP3_organizer</h3>
+            <p>Organizes MP3 files by band name and album.</p>
+            <span class="lang">PowerShell</span>
+          </a>
+          <a
+            class="card"
+            href="https://github.com/mendariel/Calc"
+            target="_blank"
+            rel="noopener"
+          >
+            <h3>Calc</h3>
+            <p>Calculator with an age-calculator mode.</p>
+            <span class="lang">C#</span>
+          </a>
+        </div>
+      </div>
+    </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Ariel Menda &middot; <a href="https://github.com/mendariel" target="_blank" rel="noopener">github.com/mendariel</a></p>
-  </footer>
+    <footer>
+      <p>
+        &copy; <span id="year"></span> Ariel Menda &middot;
+        <a href="https://github.com/mendariel" target="_blank" rel="noopener"
+          >github.com/mendariel</a
+        >
+      </p>
+    </footer>
 
-  <script src="stars.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <script src="stars.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-    const projectsToggle = document.getElementById('projectsToggle');
-    const projectsPanel = document.getElementById('projectsPanel');
-    projectsToggle.addEventListener('click', () => {
-      const isOpen = projectsPanel.classList.toggle('open');
-      projectsToggle.setAttribute('aria-expanded', isOpen);
-    });
-  </script>
-</body>
+      const projectsToggle = document.getElementById("projectsToggle");
+      const projectsPanel = document.getElementById("projectsPanel");
+      projectsToggle.addEventListener("click", () => {
+        const isOpen = projectsPanel.classList.toggle("open");
+        projectsToggle.setAttribute("aria-expanded", isOpen);
+      });
+    </script>
+  </body>
 </html>
