@@ -9,9 +9,17 @@
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Pacing knobs. Drift is px/frame before DPR scaling (~60 frames/sec);
+  // the gap values are milliseconds between shooting stars.
+  var DRIFT_BASE = 0.024;
+  var DRIFT_DEPTH = 0.1;
+  var FIRST_SHOOTING_AT = 8000;
+  var SHOOTING_MIN_GAP = 25000;
+  var SHOOTING_EXTRA_GAP = 35000;
+
   var stars = [];
   var shooting = [];
-  var nextShootingAt = 2000;
+  var nextShootingAt = FIRST_SHOOTING_AT;
 
   function initStars() {
     // depth 0 = far/dim/slow, depth 1 = near/bright/fast
@@ -25,10 +33,10 @@
         r: (0.5 + depth * 1.3) * dpr,
         baseAlpha: 0.35 + depth * 0.45,
         amp: 0.2 + Math.random() * 0.35,
-        speed: 0.0008 + Math.random() * 0.0022,
+        speed: 0.0005 + Math.random() * 0.0014,
         phase: Math.random() * Math.PI * 2,
-        vx: (0.06 + depth * 0.26) * dpr,
-        vy: (Math.random() - 0.5) * 0.08 * dpr,
+        vx: (DRIFT_BASE + depth * DRIFT_DEPTH) * dpr,
+        vy: (Math.random() - 0.5) * 0.032 * dpr,
       });
     }
   }
@@ -120,7 +128,8 @@
     if (!reduceMotion) {
       if (time >= nextShootingAt) {
         spawnShootingStar();
-        nextShootingAt = time + 5000 + Math.random() * 7000;
+        nextShootingAt =
+          time + SHOOTING_MIN_GAP + Math.random() * SHOOTING_EXTRA_GAP;
       }
       drawShootingStars();
     }

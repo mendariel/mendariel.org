@@ -40,7 +40,7 @@ body::before {
       rgba(146, 92, 255, 0.16),
       transparent 70%
     );
-  animation: aurora 30s ease-in-out infinite alternate;
+  animation: aurora 75s ease-in-out infinite alternate;
 }
 
 @keyframes aurora {
