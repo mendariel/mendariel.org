@@ -16,7 +16,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.5;
   position: relative;
 }
@@ -59,13 +60,9 @@ body::before {
   display: block;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  body::before {
-    animation: none;
-  }
-}
-
-.hero, main, footer {
+.hero,
+main,
+footer {
   position: relative;
   z-index: 1;
 }
@@ -121,7 +118,9 @@ body::before {
   font-size: 0.9rem;
   padding: 0.5rem 1.1rem;
   border-radius: 999px;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
 }
 
 .btn:hover {
@@ -131,6 +130,105 @@ body::before {
 
 .btn-ghost {
   color: var(--muted);
+}
+
+/* Resume download menu — opens on hover, focus, or tap */
+.resume-menu {
+  position: relative;
+  display: inline-flex;
+}
+
+.resume-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.5;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.resume-trigger .chevron {
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+.resume-menu:hover .chevron,
+.resume-menu:focus-within .chevron,
+.resume-menu.open .chevron {
+  transform: rotate(180deg);
+}
+
+.resume-options {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 50%;
+  z-index: 5;
+  min-width: 210px;
+  padding: 0.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-4px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0s linear 0.18s;
+}
+
+/* transparent bridge so the menu survives the gap under the button */
+.resume-options::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.45rem;
+  height: 0.45rem;
+}
+
+.resume-menu:hover .resume-options,
+.resume-menu:focus-within .resume-options,
+.resume-menu.open .resume-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0s;
+}
+
+.resume-option {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 7px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background-color 0.15s ease;
+}
+
+.resume-option:hover,
+.resume-option:focus-visible {
+  background-color: rgba(79, 140, 255, 0.14);
+}
+
+.resume-option .fmt {
+  font-weight: 600;
+}
+
+.resume-option .meta {
+  color: var(--muted);
+  font-size: 0.72rem;
+  white-space: nowrap;
 }
 
 .skills {
@@ -187,7 +285,9 @@ main {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
 }
 
 .projects-panel.open {
@@ -209,7 +309,9 @@ main {
   padding: 0.75rem 0.9rem;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
 }
 
 .card:hover {
@@ -250,4 +352,22 @@ footer {
 
 footer a {
   color: var(--muted);
+}
+
+/* Must come last: these override equal-specificity rules defined above. */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+
+  .resume-options,
+  .resume-menu:hover .resume-options,
+  .resume-menu:focus-within .resume-options,
+  .resume-menu.open .resume-options {
+    transform: translateX(-50%);
+  }
+
+  .resume-trigger .chevron {
+    transition: none;
+  }
 }

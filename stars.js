@@ -1,13 +1,13 @@
 (function () {
-  var canvas = document.getElementById('stars');
+  var canvas = document.getElementById("stars");
   if (!canvas) return;
-  var ctx = canvas.getContext('2d');
+  var ctx = canvas.getContext("2d");
   if (!ctx) return;
 
   var dpr = Math.max(window.devicePixelRatio || 1, 1);
   var reduceMotion =
     window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var stars = [];
   var shooting = [];
@@ -28,7 +28,7 @@
         speed: 0.0008 + Math.random() * 0.0022,
         phase: Math.random() * Math.PI * 2,
         vx: (0.06 + depth * 0.26) * dpr,
-        vy: (Math.random() - 0.5) * 0.08 * dpr
+        vy: (Math.random() - 0.5) * 0.08 * dpr,
       });
     }
   }
@@ -43,20 +43,20 @@
       vy: Math.sin(angle) * speed,
       len: (90 + Math.random() * 130) * dpr,
       life: 0,
-      maxLife: 55 + Math.random() * 35
+      maxLife: 55 + Math.random() * 35,
     });
   }
 
   function resize() {
     canvas.width = window.innerWidth * dpr;
     canvas.height = window.innerHeight * dpr;
-    canvas.style.width = window.innerWidth + 'px';
-    canvas.style.height = window.innerHeight + 'px';
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + "px";
     initStars();
   }
 
   function drawStars(time) {
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = "#ffffff";
     for (var i = 0; i < stars.length; i++) {
       var s = stars[i];
       if (!reduceMotion) {
@@ -92,12 +92,12 @@
       var fade = 1 - m.life / m.maxLife;
 
       var gradient = ctx.createLinearGradient(m.x, m.y, tailX, tailY);
-      gradient.addColorStop(0, 'rgba(255, 255, 255, ' + fade * 0.9 + ')');
-      gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      gradient.addColorStop(0, "rgba(255, 255, 255, " + fade * 0.9 + ")");
+      gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
 
       ctx.strokeStyle = gradient;
       ctx.lineWidth = 1.6 * dpr;
-      ctx.lineCap = 'round';
+      ctx.lineCap = "round";
       ctx.beginPath();
       ctx.moveTo(m.x, m.y);
       ctx.lineTo(tailX, tailY);
@@ -128,7 +128,7 @@
     requestAnimationFrame(draw);
   }
 
-  window.addEventListener('resize', resize);
+  window.addEventListener("resize", resize);
   resize();
 
   if (reduceMotion) {

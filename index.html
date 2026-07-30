@@ -51,7 +51,43 @@
           >LinkedIn</a
         >
         <a class="btn" href="mailto:ariel.menda@gmail.com">Email</a>
-        <a class="btn" href="resume.doc">Resume</a>
+        <div class="resume-menu" id="resumeMenu">
+          <button
+            type="button"
+            class="btn resume-trigger"
+            id="resumeTrigger"
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="resumeOptions"
+          >
+            Resume <span class="chevron">&#9662;</span>
+          </button>
+          <div
+            class="resume-options"
+            id="resumeOptions"
+            role="menu"
+            aria-labelledby="resumeTrigger"
+          >
+            <a
+              class="resume-option"
+              href="Ariel-Menda-Resume.pdf"
+              role="menuitem"
+              download
+            >
+              <span class="fmt">PDF</span>
+              <span class="meta">2 pages &middot; 24 KB</span>
+            </a>
+            <a
+              class="resume-option"
+              href="Ariel-Menda-Resume.docx"
+              role="menuitem"
+              download
+            >
+              <span class="fmt">Word</span>
+              <span class="meta">.docx &middot; 11 KB</span>
+            </a>
+          </div>
+        </div>
         <a
           class="btn btn-ghost"
           href="https://status.mendariel.org"
@@ -170,6 +206,35 @@
       projectsToggle.addEventListener("click", () => {
         const isOpen = projectsPanel.classList.toggle("open");
         projectsToggle.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Hover drives the resume menu via CSS; this covers touch and keyboard.
+      const resumeMenu = document.getElementById("resumeMenu");
+      const resumeTrigger = document.getElementById("resumeTrigger");
+
+      const setResumeOpen = (open) => {
+        resumeMenu.classList.toggle("open", open);
+        resumeTrigger.setAttribute("aria-expanded", open);
+      };
+
+      resumeTrigger.addEventListener("click", (event) => {
+        event.stopPropagation();
+        setResumeOpen(!resumeMenu.classList.contains("open"));
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!resumeMenu.contains(event.target)) setResumeOpen(false);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && resumeMenu.classList.contains("open")) {
+          setResumeOpen(false);
+          resumeTrigger.focus();
+        }
+      });
+
+      resumeMenu.addEventListener("focusout", (event) => {
+        if (!resumeMenu.contains(event.relatedTarget)) setResumeOpen(false);
       });
     </script>
   </body>
