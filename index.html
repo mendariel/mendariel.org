@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="tsparticles"></div>
+  <canvas id="stars"></canvas>
 
   <header class="hero">
     <img class="avatar" src="avatar.jfif" alt="Ariel Menda" width="104" height="104">
@@ -85,8 +85,7 @@
     <p>&copy; <span id="year"></span> Ariel Menda &middot; <a href="https://github.com/mendariel" target="_blank" rel="noopener">github.com/mendariel</a></p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@4/tsparticles.slim.bundle.min.js"></script>
-  <script src="particles-config.js"></script>
+  <script src="stars.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
