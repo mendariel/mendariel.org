@@ -322,6 +322,9 @@ main {
 .card h3 {
   margin: 0 0 0.2rem;
   font-size: 0.9rem;
+  /* Repo names are single unbroken tokens; let them wrap instead of
+     overflowing into the neighbouring card. */
+  overflow-wrap: anywhere;
 }
 
 .card p {
