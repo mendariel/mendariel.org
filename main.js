@@ -1,12 +1,5 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const projectsToggle = document.getElementById("projectsToggle");
-const projectsPanel = document.getElementById("projectsPanel");
-projectsToggle.addEventListener("click", () => {
-  const isOpen = projectsPanel.classList.toggle("open");
-  projectsToggle.setAttribute("aria-expanded", isOpen);
-});
-
 // Hover drives the resume menu via CSS; this covers touch and keyboard.
 const resumeMenu = document.getElementById("resumeMenu");
 const resumeTrigger = document.getElementById("resumeTrigger");
